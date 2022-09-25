@@ -14,9 +14,23 @@ def areUnique(str):
         chars[ord(character)] = True
     return True
 
+def areUniqueHashTable(str):
+    chars = {}
+    for i in range(len(str)):
+        char = str[i]
+        if char in chars:
+            return False
+        else:
+            chars[char] = True
+    return True
+
 if __name__ == "__main__":
     str = input("Enter a string to check if all characters are different: ")
     if areUnique(str):
         print("All characters in the string are different")
     else:
         print("There is at least one repeated character in the string")
+    if areUniqueHashTable(str):
+        print("All characters in the string are different (using HashTable)")
+    else:
+        print("There is at least one repeated character in the string (using HashTable)")
